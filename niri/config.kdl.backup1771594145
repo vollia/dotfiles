@@ -246,8 +246,6 @@ layout {
         // top 64
         // bottom 64
     }
-
-    background-color "transparent"
 }
 
 cursor {
@@ -402,9 +400,6 @@ window-rule {
 overview {
     // backdrop-color "#b0b0b0"
     zoom 0.4
-    workspace-shadow {
-        off
-    }
 }
 
 
@@ -673,13 +668,6 @@ binds {
     // Mod+Shift+P { power-off-monitors; }
 }
 
-layer-rule {
-    match namespace="^quickshell$"
-    place-within-backdrop true
-}
-
-
-
 gestures {
     hot-corners {
         off
@@ -690,14 +678,7 @@ gestures {
     }
 }
 
-environment {
-  QT_QPA_PLATFORMTHEME "gtk3"
-  QT_QPA_PLATFORMTHEME_QT6 "gtk3"
-}
-
 include "dms/cursor.kdl"
 
 include "dms/outputs.kdl"
 include "dms/binds.kdl"
-
-include "dms/windowrules.kdl"
