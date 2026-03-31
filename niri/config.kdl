@@ -76,21 +76,21 @@ input {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-output "DP-1" {
-    transform "270"
-    position x=0 y=-450
-}
-output "DP-2" {
-    transform "270"
-    position x=0 y=-450
-}
-output "HDMI-A-1" {
-    transform "normal"
-    position x=1080 y=0
-}
-output "eDP-1" {
-    transform "normal"
-}
+// output "DP-1" {
+    // transform "270"
+    // position x=0 y=-450
+// }
+// output "DP-2" {
+    // transform "270"
+    // position x=0 y=-450
+// }
+// output "HDMI-A-1" {
+    // transform "normal"
+    // position x=1080 y=0
+// }
+// output "eDP-1" {
+    // transform "normal"
+// }
 
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
@@ -317,16 +317,11 @@ screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d %H-%M-%S.png"
 // Animation settings.
 // The wiki explains how to configure individual animations:
 // https://yalter.github.io/niri/Configuration:-Animations
-animations {
-    window-open {
-        duration-ms 250
-        curve "linear"
-    }
+//
+include "incinerate.kdl"
 
-    window-close {
-        duration-ms 300
-        curve "linear"
-    }
+animations {
+    slowdown 1.5
     workspace-switch {
         spring damping-ratio=0.8 stiffness=1000 epsilon=0.0001
     }
@@ -359,6 +354,8 @@ window-rule {
     // - host Firefox (app-id is "firefox")
     // - Flatpak Firefox (app-id is "org.mozilla.firefox")
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id=r#"firefox$"# title=r"^Extension:\s*\(Bitwarden Password Manager\)\s*-\s*—\s*Mozilla Firefox$"
+    match app-id=r#"firefox$"# title=r"^Extension:\s*\(Open in Browser\)\s*-\s*—\s*Mozilla Firefox$"
     open-floating true
 }
 
@@ -635,7 +632,7 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
+    Mod+g       { toggle-window-floating; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
