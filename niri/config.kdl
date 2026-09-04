@@ -46,8 +46,8 @@ input {
     mouse {
         // off
         // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
+        accel-speed 0.1
+        accel-profile "flat"
         // scroll-method "no-scroll"
     }
 
@@ -323,10 +323,13 @@ include "incinerate.kdl"
 animations {
     slowdown 1.5
     workspace-switch {
-        spring damping-ratio=0.8 stiffness=1000 epsilon=0.0001
+        spring damping-ratio=0.7 stiffness=1000 epsilon=0.0001
     }
     horizontal-view-movement {
-        spring damping-ratio=0.8 stiffness=800 epsilon=0.0001
+        spring damping-ratio=0.7 stiffness=800 epsilon=0.0001
+    }
+    window-resize {
+        spring damping-ratio=0.7 stiffness=750 epsilon=0.0003
     }
     screenshot-ui-open {
         duration-ms 250
@@ -338,14 +341,26 @@ animations {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
 window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
+  match app-id=r#"^kitty$"#
+  draw-border-with-background false
+  opacity 0.9
+
+  background-effect {
+    blur true
+    xray false
+  }
+}
+
+window-rule {
+  match app-id=r#"^de.haeckerfelix.Shortwave$"#
+  draw-border-with-background false
+  opacity 0.7
+
+  background-effect {
+    blur true
+    xray false
+  }
 }
 
 // Open the Firefox picture-in-picture player as floating by default.

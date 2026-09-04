@@ -1,0 +1,38 @@
+// DMS Window Rules - Managed by DankMaterialShell
+// Do not edit manually - changes may be overwritten
+
+// @id=wr_1773399254235022133 @name=bitwarden 1
+window-rule {
+    match app-id="firefox" title="^Extension:\\s*\\(Bitwarden Password Manager\\)\\s*-\\s*—\\s*Mozilla Firefox$"
+    open-floating true
+}
+
+// @id=wr_1773399448224046195 @name=bitwareden 2
+window-rule {
+    match app-id="firefox" title="^Extension:\\s*\\(Open in Browser\\)\\s*-\\s*—\\s*Mozilla Firefox$"
+    open-floating true
+}
+
+// @id=wr_1774949148276275510 @name=ParaView
+window-rule {
+    match app-id="^ParaView$"
+    open-maximized true
+}
+
+// @id=wr_1774949201709721255 @name=firefox
+window-rule {
+    match app-id="^firefox$"
+    open-maximized true
+}
+
+// @id=wr_1786702119061965584 @name=iconCFD-Process
+window-rule {
+    match app-id="^iconCFD-Process$"
+    open-maximized true
+}
+
+// @id=dms-floating-windows @name=DMS Floating Windows
+window-rule {
+    match app-id="^com.danklinux.dms$"
+    open-floating true
+}

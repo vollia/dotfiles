@@ -3,31 +3,46 @@
 output "DP-3" {
     mode "1920x1200@59.950"
     scale 1
-    position x=0 y=201
+    position x=0 y=354
 }
 
 output "DP-2" {
-    mode "1024x768@60.004"
+    mode "1920x1080@60.000"
     scale 1
     transform "270"
-    position x=391 y=0
+    position x=840 y=0
+    layout {
+        always-center-single-column
+    }
 }
 
 output "HDMI-A-1" {
     mode "1920x1080@60.000"
     scale 1
-    position x=1080 y=201
-}
-
-output "DP-4" {
-    mode "1920x1200@59.950"
-    scale 1
-    position x=1920 y=201
+    position x=1920 y=594
 }
 
 output "eDP-1" {
     mode "1920x1080@60.056"
     scale 1
-    position x=3000 y=201
+    position x=3840 y=474
+}
+
+output "DP-7" {
+    mode "1920x1200@59.950"
+    scale 1
+    position x=4161 y=474
+}
+
+output "DP-5" {
+    mode "1920x1200@59.950"
+    scale 1
+    position x=5760 y=474
+}
+
+output "DP-4" {
+    mode "1920x1200@59.950"
+    scale 1
+    position x=7680 y=474
 }
 
