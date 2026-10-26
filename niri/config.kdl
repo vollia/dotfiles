@@ -341,6 +341,12 @@ animations {
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
 
+
+// window-rule {
+//     open-floating true
+// }
+
+
 window-rule {
   match app-id=r#"^kitty$"#
   draw-border-with-background false
@@ -713,3 +719,4 @@ include "dms/outputs.kdl"
 include "dms/binds.kdl"
 
 include "dms/windowrules.kdl"
+include "dms/layout.kdl"
